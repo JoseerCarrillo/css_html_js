@@ -1,5 +1,7 @@
 const contenedor = document.querySelector("#contenedorUsuarios");
 
+let usuariosGlobales = [];
+
 fetch("https://jsonplaceholder.typicode.com/users")
  .then(response => response.json())
  .then(data => {
@@ -63,3 +65,19 @@ async function cargarUsuarios() {
   console.error(error);
  }
 }
+
+async function cargarUsuarios() {
+ const response = await fetch(
+ "https://jsonplaceholder.typicode.com/users"
+ );
+ usuariosGlobales = await response.json();
+ mostrarUsuarios(usuariosGlobales);
+}
+const buscar = document.querySelector("#buscar");
+buscar.addEventListener("input", () => {
+ const texto = buscar.value.toLowerCase();
+ const filtrados = usuariosGlobales.filter(usuario =>
+ usuario.name.toLowerCase().includes(texto)
+ );
+ mostrarUsuarios(filtrados);
+});
