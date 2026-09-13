@@ -25,9 +25,12 @@ function mostrarUsuarios(usuarios) {
  tarjeta.classList.add("tarjeta");
  tarjeta.innerHTML = `
  <h3>${usuario.name}</h3>
+ <p>${usuario.username}</p>
  <p>${usuario.email}</p>
+ <p>${usuario.phone}</p>
  <p>${usuario.address.city}</p>
  <p>${usuario.company.name}</p>
+ <p><a href="https://${usuario.website}" target="_blank">${usuario.website}</a></p>
  `;
  contenedor.appendChild(tarjeta);
   });
