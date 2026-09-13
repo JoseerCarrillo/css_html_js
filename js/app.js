@@ -77,7 +77,9 @@ const buscar = document.querySelector("#buscar");
 buscar.addEventListener("input", () => {
  const texto = buscar.value.toLowerCase();
  const filtrados = usuariosGlobales.filter(usuario =>
- usuario.name.toLowerCase().includes(texto)
+ usuario.name.toLowerCase().includes(texto) || 
+ usuario.email.toLowerCase().includes(texto) ||
+ usuario.address.city.toLowerCase().includes(texto)
  );
  mostrarUsuarios(filtrados);
 });
