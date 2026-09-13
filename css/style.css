@@ -28,10 +28,10 @@ main {
  padding: 30px;
 }
 .contenedor-usuarios {
- display: grid;
- grid-template-columns: repeat(3, 1fr);
- gap: 20px;
- margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 20px;
 }
 .tarjeta {
  background: white;
@@ -40,28 +40,34 @@ main {
  box-shadow: 0 2px 8px rgba(0,0,0,.1);
 }
 
-@media (max-width: 900px) {
- .contenedor-usuarios {
- grid-template-columns: repeat(2, 1fr);
-  }
+nav a:hover,
+nav a:focus-visible {
+  text-decoration: underline;
 }
-@media (max-width: 600px) {
- .contenedor-usuarios {
- grid-template-columns: 1fr;
- }
- nav ul {
- flex-direction: column;
- }
- main {
- padding: 16px;
- }
+ 
+#buscar:focus-visible,
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid #222;
+  outline-offset: 2px;
 }
 
-.contenedor-usuarios {
- display: grid;
- grid-template-columns: repeat(
- auto-fit,
- minmax(250px, 1fr)
- );
- gap: 20px;
+@media (max-width: 900px) {
+  .contenedor-usuarios {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+ 
+@media (max-width: 600px) {
+  .contenedor-usuarios {
+    grid-template-columns: 1fr;
+  }
+ 
+  nav ul {
+    flex-direction: column;
+  }
+ 
+  main {
+    padding: 16px;
+  }
 }
