@@ -56,3 +56,12 @@ main {
  padding: 16px;
  }
 }
+
+.contenedor-usuarios {
+ display: grid;
+ grid-template-columns: repeat(
+ auto-fit,
+ minmax(250px, 1fr)
+ );
+ gap: 20px;
+}
